@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="2dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center">
+
+              <ImageView
+                  android:layout_width="60dp"
+                  android:layout_height="60dp"
+                  android:src="@drawable/app_logo"/>
+
+              <com.google.android.material.textview.MaterialTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/app_name"
+                  android:fontFamily="@font/inter_medium"
+                  android:layout_marginStart="10dp"
+                  android:textColor="#2196F3"
+                  android:textSize="20sp"/>
+          </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="#20BABABA"
+       android:overScrollMode="never"
+       app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/clMositureMonitoring"
+                   android:layout_width="match_parent"
+                   android:layout_height="220dp"
+                   android:orientation="vertical"
+                   android:background="@color/white"
+                   android:layout_margin="12dp"
+                   app:cardCornerRadius="10dp"
+                   app:cardElevation="5dp"
+                   android:clickable="false"
+                   android:layout_weight="1">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@drawable/button_click_view">
+
+                       <com.google.android.material.card.MaterialCardView
+                           android:id="@+id/cv1"
+                           android:layout_width="match_parent"
+                           android:layout_height="110dp"
+                           app:cardCornerRadius="6dp"
+                           app:cardElevation="5dp"
+                           android:layout_marginHorizontal="14dp"
+                           android:layout_marginVertical="15dp"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:scaleType="centerCrop"
+                               android:src="@drawable/iv_sensor" />
+                       </com.google.android.material.card.MaterialCardView>
+
+
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="@string/app_name"
+                           android:layout_marginTop="15dp"
+                           android:gravity="center"
+                           android:textSize="16sp"
+                           android:fontFamily="@font/inter_medium"
+                           android:textColor="#232B37"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/cv1"
+                           android:layout_marginBottom="10dp"/>
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+               </com.google.android.material.card.MaterialCardView>
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/clCottonExperience"
+                   android:layout_width="match_parent"
+                   android:layout_height="220dp"
+                   android:orientation="vertical"
+                   android:background="@color/white"
+                   android:layout_margin="12dp"
+                   app:cardCornerRadius="10dp"
+                   app:cardElevation="5dp"
+                   android:clickable="false"
+                   android:layout_weight="1">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@drawable/button_click_view">
+
+
+                   <com.google.android.material.card.MaterialCardView
+                           android:id="@+id/cv2"
+                           android:layout_width="match_parent"
+                           android:layout_height="110dp"
+                           app:cardCornerRadius="6dp"
+                           app:cardElevation="5dp"
+                           android:layout_marginHorizontal="14dp"
+                           android:layout_marginVertical="15dp"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:scaleType="centerCrop"
+                               android:src="@drawable/iv_cotton_iregation" />
+                       </com.google.android.material.card.MaterialCardView>
+
+
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="G'o'zaning sugorish muddatlarini aniqlash usullari"
+                           android:layout_marginTop="15dp"
+                           android:gravity="center"
+                           android:textSize="16sp"
+                           android:textColor="#232B37"
+                           android:fontFamily="@font/inter_medium"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/cv2"
+                           android:layout_marginBottom="10dp"/>
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+               </com.google.android.material.card.MaterialCardView>
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/clWateringRecommendations"
+                   android:layout_width="match_parent"
+                   android:layout_height="220dp"
+                   android:orientation="vertical"
+                   android:background="@color/white"
+                   android:layout_margin="12dp"
+                   app:cardCornerRadius="10dp"
+                   app:cardElevation="5dp"
+                   android:clickable="false"
+                   android:layout_weight="1">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@drawable/button_click_view">
+
+
+                   <com.google.android.material.card.MaterialCardView
+                           android:id="@+id/cv3"
+                           android:layout_width="match_parent"
+                           android:layout_height="110dp"
+                           app:cardCornerRadius="6dp"
+                           app:cardElevation="5dp"
+                           android:layout_marginHorizontal="14dp"
+                           android:layout_marginVertical="15dp"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:scaleType="centerCrop"
+                               android:src="@drawable/iv_watering_recommendations" />
+                       </com.google.android.material.card.MaterialCardView>
+
+
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="G'o'zani sug'orish bo'yicha tavsiyalar"
+                           android:layout_marginTop="15dp"
+                           android:gravity="center"
+                           android:textSize="16sp"
+                           android:layout_margin="14dp"
+                           android:textColor="#232B37"
+                           android:fontFamily="@font/inter_medium"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/cv3"
+                           android:layout_marginBottom="10dp"/>
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+               </com.google.android.material.card.MaterialCardView>
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/clAppInformation"
+                   android:layout_width="match_parent"
+                   android:layout_height="220dp"
+                   android:orientation="vertical"
+                   android:background="@color/white"
+                   android:layout_margin="12dp"
+                   app:cardElevation="5dp"
+                   app:cardCornerRadius="10dp"
+                   android:clickable="false"
+                   android:layout_weight="1">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@drawable/button_click_view">
+
+                   <com.google.android.material.card.MaterialCardView
+                           android:id="@+id/cv4"
+                           android:layout_width="match_parent"
+                           android:layout_height="110dp"
+                           app:cardCornerRadius="6dp"
+                           app:cardElevation="5dp"
+                           android:layout_marginHorizontal="14dp"
+                           android:layout_marginVertical="15dp"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:src="@drawable/app_logo" />
+                       </com.google.android.material.card.MaterialCardView>
+
+
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Ilova haqida"
+                           android:layout_marginTop="15dp"
+                           android:gravity="center"
+                           android:textSize="16sp"
+                           android:textColor="#232B37"
+                           android:fontFamily="@font/inter_medium"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/cv4"
+                           android:layout_marginBottom="10dp"/>
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+               </com.google.android.material.card.MaterialCardView>
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+   </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

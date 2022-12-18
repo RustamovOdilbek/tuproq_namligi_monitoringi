@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.AppAboutFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="2dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/app_logo"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ilova haqida"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#2196F3"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBar"
+        android:background="#20BABABA"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="14dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/llLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="127dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="54dp"
+                            android:layout_marginVertical="17dp"
+                            android:src="@drawable/iv_unoversity_logo" />
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/colortext1"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="Paxta selektsiyasi, urug’chiligi va yetishtirish agrotexnologiyalari ilmiy - tadqiqot instituti"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="127dp"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="54dp"
+                            android:layout_marginVertical="17dp"
+                            android:src="@drawable/iv_inavation" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="#002856"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="O’zbekiston innovatsion rivojlanish vazirligi"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAppAboute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_app_about"
+                android:textColor="@color/colortext2"
+                android:textSize="14sp"
+                android:justificationMode="inter_word"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llLogo" />
+
+            <TextView
+                android:id="@+id/tvConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_boglanish_uchun"
+                android:textColor="#232B37"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginTop="56dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAppAboute" />
+
+            <ImageView
+                android:id="@+id/ivPhone1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvConnect" />
+
+            <TextView
+                android:id="@+id/tvPhone1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="+9989 (97) 716 99 38"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                app:layout_constraintBottom_toBottomOf="@id/ivPhone1"
+                app:layout_constraintStart_toEndOf="@id/ivPhone1"
+                app:layout_constraintTop_toTopOf="@id/ivPhone1" />
+
+            <TextView
+                android:id="@+id/tvPhone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="+9989 (99) 765 89 02"
+                android:textSize="14sp"
+                 android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                app:layout_constraintEnd_toEndOf="@id/tvPhone1"
+                app:layout_constraintStart_toStartOf="@id/tvPhone1"
+                app:layout_constraintTop_toBottomOf="@id/tvPhone1" />
+
+            <ImageView
+                android:id="@+id/ivEmail"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_email"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPhone2"/>
+
+            <TextView
+                android:id="@+id/tvEmail1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="mirzoolim89@mail.ru"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                app:layout_constraintBottom_toBottomOf="@id/ivEmail"
+                app:layout_constraintStart_toEndOf="@id/ivEmail"
+                app:layout_constraintTop_toTopOf="@id/ivEmail" />
+
+            <TextView
+                android:id="@+id/tvEmail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="normat8689@gmail.com"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                app:layout_constraintStart_toStartOf="@id/tvEmail1"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail1"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail2"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

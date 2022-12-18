@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_appAboutFragment"
+            app:destination="@id/appAboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cottonExperienceFragment"
+            app:destination="@id/cottonExperienceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_moistureMonitoringFragment"
+            app:destination="@id/moistureMonitoringFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appAboutFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.AppAboutFragment"
+        android:label="fragment_app_about"
+        tools:layout="@layout/fragment_app_about" />
+    <fragment
+        android:id="@+id/cottonExperienceFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.CottonExperienceFragment"
+        android:label="fragment_cotton_experience"
+        tools:layout="@layout/fragment_cotton_experience" >
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_externalCharactersFragment"
+            app:destination="@id/externalCharactersFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_terneticInstrumentFragment"
+            app:destination="@id/terneticInstrumentFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_thermostatScalesFragment"
+            app:destination="@id/thermostatScalesFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_dataSnapEquipmentFragment"
+            app:destination="@id/dataSnapEquipmentFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_WFDFragment"
+            app:destination="@id/WFDFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_electronicHandRefractometerFragment"
+            app:destination="@id/electronicHandRefractometerFragment" />
+        <action
+            android:id="@+id/action_cottonExperienceFragment_to_TDRFragment"
+            app:destination="@id/TDRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/externalCharactersFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.ExternalCharactersFragment"
+        android:label="fragment_external_characters"
+        tools:layout="@layout/fragment_external_characters" />
+    <fragment
+        android:id="@+id/terneticInstrumentFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.TerneticInstrumentFragment"
+        android:label="fragment_ternetic_instrument"
+        tools:layout="@layout/fragment_ternetic_instrument" />
+    <fragment
+        android:id="@+id/thermostatScalesFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.ThermostatScalesFragment"
+        android:label="fragment_thermostat_scales"
+        tools:layout="@layout/fragment_thermostat_scales" />
+    <fragment
+        android:id="@+id/dataSnapEquipmentFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.DataSnapEquipmentFragment"
+        android:label="fragment_data_snap_equipment"
+        tools:layout="@layout/fragment_data_snap_equipment" />
+    <fragment
+        android:id="@+id/WFDWorksOrderFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDWorksOrderFragment"
+        android:label="fragment_wfd_works_order"
+        tools:layout="@layout/fragment_wfd_works_order" />
+    <fragment
+        android:id="@+id/WFDTaskFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDTaskFragment"
+        android:label="fragment_wfd_task"
+        tools:layout="@layout/fragment_wfd_task" />
+    <fragment
+        android:id="@+id/WFDInstallFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDInstallFragment"
+        android:label="fragment_wfd_install"
+        tools:layout="@layout/fragment_wfd_install" />
+    <fragment
+        android:id="@+id/WFDCompyuterWorksFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDCompyuterWorksFragment"
+        android:label="fragment_wfd_compyuter_works"
+        tools:layout="@layout/fragment_wfd_compyuter_works" />
+    <fragment
+        android:id="@+id/WFDAssembleFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDAssembleFragment"
+        android:label="fragment_wfd_assemble"
+        tools:layout="@layout/fragment_wfd_assemble" />
+    <fragment
+        android:id="@+id/WFDFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.WFDFragment"
+        android:label="fragment_wfd"
+        tools:layout="@layout/fragment_wfd" >
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDInstallFragment"
+            app:destination="@id/WFDInstallFragment" />
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDComponentFragment"
+            app:destination="@id/WFDComponentFragment" />
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDWorksOrderFragment"
+            app:destination="@id/WFDWorksOrderFragment" />
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDTaskFragment"
+            app:destination="@id/WFDTaskFragment" />
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDCompyuterWorksFragment"
+            app:destination="@id/WFDCompyuterWorksFragment" />
+        <action
+            android:id="@+id/action_WFDFragment_to_WFDAssembleFragment"
+            app:destination="@id/WFDAssembleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WFDComponentFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.wfd.WFDComponentFragment"
+        android:label="fragment_wfd_component"
+        tools:layout="@layout/fragment_wfd_component" />
+    <fragment
+        android:id="@+id/advantagesFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.AdvantagesFragment"
+        android:label="fragment_advantages"
+        tools:layout="@layout/fragment_advantages" />
+    <fragment
+        android:id="@+id/calibrationFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.CalibrationFragment"
+        android:label="fragment_calibration"
+        tools:layout="@layout/fragment_calibration" />
+    <fragment
+        android:id="@+id/determineConcentrationFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.DetermineConcentrationFragment"
+        android:label="fragment_determine_concentration"
+        tools:layout="@layout/fragment_determine_concentration" />
+    <fragment
+        android:id="@+id/electronicHandRefractometerFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.ElectronicHandRefractometerFragment"
+        android:label="fragment_electronic_hand_refractometer"
+        tools:layout="@layout/fragment_electronic_hand_refractometer" >
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_rulesWorkFragment"
+            app:destination="@id/rulesWorkFragment" />
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_determineConcentrationFragment"
+            app:destination="@id/determineConcentrationFragment" />
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_calibrationFragment"
+            app:destination="@id/calibrationFragment" />
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_advantagesFragment"
+            app:destination="@id/advantagesFragment" />
+        <action
+            android:id="@+id/action_electronicHandRefractometerFragment_to_refractometerFragment"
+            app:destination="@id/refractometerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesWorkFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.RulesWorkFragment"
+        android:label="fragment_rules_work"
+        tools:layout="@layout/fragment_rules_work" />
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.TasksFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/refractometerFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.electronic.RefractometerFragment"
+        android:label="fragment_refractometer"
+        tools:layout="@layout/fragment_refractometer" />
+    <fragment
+        android:id="@+id/moistureMonitoringFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.MoistureMonitoringFragment"
+        android:label="fragment_moisture_monitoring"
+        tools:layout="@layout/fragment_moisture_monitoring" >
+        <action
+            android:id="@+id/action_moistureMonitoringFragment_to_controlFragment"
+            app:destination="@id/controlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/controlFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.ControlFragment"
+        android:label="fragment_control"
+        tools:layout="@layout/fragment_control" />
+    <fragment
+        android:id="@+id/TDRFragment"
+        android:name="com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments.experience.TDRFragment"
+        android:label="fragment_tdr"
+        tools:layout="@layout/fragment_tdr" />
+</navigation>

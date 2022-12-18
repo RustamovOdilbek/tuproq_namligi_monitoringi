@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.experience.electronic.DetermineConcentrationFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="2dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/app_logo"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="#2196F3"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="12dp">
+
+            <TextView
+                android:id="@+id/tvConcentration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colortext1"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/str_concentration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvConcentration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_weight="1"
+                    android:layout_height="130dp"
+                    android:src="@drawable/iv_concentration_1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_concentration_1"
+                    android:layout_weight="1"
+                    android:textColor="@color/colortext2"
+                    android:justificationMode="inter_word"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/inter_regular"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_concentration_2"
+                android:textColor="@color/colortext2"
+                android:justificationMode="inter_word"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintTop_toBottomOf="@id/ll1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_concentration_3"
+                android:textColor="@color/colortext2"
+                android:justificationMode="inter_word"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintTop_toBottomOf="@id/tv2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/iv_concentration_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv3"/>
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_rule_work_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colortext1"
+                android:justificationMode="inter_word"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                app:layout_constraintTop_toBottomOf="@id/iv1"/>
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_rule_work_5"
+                android:textColor="@color/colortext2"
+                android:justificationMode="inter_word"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintTop_toBottomOf="@id/tv4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

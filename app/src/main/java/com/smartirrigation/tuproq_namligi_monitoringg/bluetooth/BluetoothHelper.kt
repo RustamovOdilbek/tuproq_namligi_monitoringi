@@ -1,0 +1,146 @@
+package com.smartirrigation.tuproq_namligi_monitoringg.bluetooth
+
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothDevice
+import android.bluetooth.BluetoothManager
+import android.content.Context
+import android.content.IntentFilter
+import android.os.Build
+import android.util.Log
+import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothDeviceFounderReceiver
+import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothHelperConstant
+import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothHelperListener
+
+class BluetoothHelper(private val context: Context, private val listener: BluetoothHelperListener) {
+
+    private val mBluetoothAdapter by lazy {
+
+        val bluetoothManager =
+            context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
+        bluetoothManager.getAdapter()
+
+        bluetoothManager.adapter?.let {
+            return@lazy it
+        } ?: run {
+            throw RuntimeException(
+                "Bluetooth is not supported on this hardware platform. " +
+                        "Make sure you try it from the real device\n " +
+                        "You could more information from here:\n" +
+                        "https://developer.android.com/reference/android/bluetooth/BluetoothAdapter"
+            )
+        }
+    }
+
+    private var isRequiredPermission = false
+
+    private var isEnabled = mBluetoothAdapter.isEnabled
+
+    @SuppressLint("MissingPermission")
+    private var isDiscovering = mBluetoothAdapter.isDiscovering
+
+    private val mBluetoothStateChangeReceiver by lazy {
+        object : BluetoothStateChangeReceiver() {
+            override fun onStartDiscovering() {
+                isDiscovering = true
+                listener.onStartDiscovery()
+            }
+
+            override fun onFinishDiscovering() {
+                isDiscovering = false
+                listener.onFinishDiscovery()
+            }
+
+            override fun onEnabledBluetooth() {
+                isEnabled = true
+                listener.onEnabledBluetooth()
+            }
+
+            override fun onDisabledBluetooth() {
+                isEnabled = false
+                listener.onDisabledBluetooh()
+            }
+        }
+    }
+
+    private val mBluetoothDeviceFounderReceiver by lazy {
+        object : BluetoothDeviceFounderReceiver() {
+            override fun getFoundDevices(device: BluetoothDevice?) {
+                listener.getBluetoothDeviceList(device)
+            }
+        }
+    }
+
+    fun isBluetoothEnabled() = isEnabled
+
+    fun isBluetoothScanning() = isDiscovering
+
+    fun enableBluetooth() {
+        if (!isEnabled) mBluetoothAdapter.enable()
+    }
+
+    fun disableBluetooth() {
+        if (isEnabled) mBluetoothAdapter.disable()
+    }
+
+    fun registerBluetoothStateChanged() {
+        val intentFilter = IntentFilter()
+        intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED)
+        intentFilter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED)
+        intentFilter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)
+        context.registerReceiver(mBluetoothStateChangeReceiver, intentFilter)
+    }
+
+    fun unregisterBluetoothStateChanged() {
+        context.unregisterReceiver(mBluetoothStateChangeReceiver)
+    }
+
+    fun startDiscovery() {
+        Log.d("TAG", "startDiscovery: 1 ${isDiscovering} ${isEnabled}")
+
+        if (isEnabled && !isDiscovering) {
+            mBluetoothAdapter.startDiscovery()
+            val discoverDevicesIntent = IntentFilter().apply {
+                addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED)
+                addAction(BluetoothDevice.ACTION_FOUND)
+                addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED)
+            }
+            context.registerReceiver(mBluetoothDeviceFounderReceiver, discoverDevicesIntent)
+        }
+    }
+
+    fun stopDiscovery() {
+        Log.d("TAG", "startDiscovery: 2${isDiscovering} ${isEnabled}")
+        if (isEnabled && isDiscovering) {
+            mBluetoothAdapter.cancelDiscovery()
+        }
+    }
+
+    private fun checkBTPermissions() {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+            var permissionCheck =
+                context.checkSelfPermission(BluetoothHelperConstant.ACCESS_FINE_LOCATION)
+            permissionCheck += context.checkSelfPermission(BluetoothHelperConstant.ACCESS_COARSE_LOCATION)
+
+            if (permissionCheck != 0)
+                (context as Activity).requestPermissions(
+                    arrayOf(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ), BluetoothHelperConstant.REQ_CODE
+                )
+        }
+    }
+
+    fun setPermissionRequired(isRequired: Boolean): BluetoothHelper {
+        this.isRequiredPermission = isRequired
+        return this
+    }
+
+    fun create(): BluetoothHelper {
+        if (this.isRequiredPermission) checkBTPermissions()
+        return BluetoothHelper(context, listener)
+    }
+}

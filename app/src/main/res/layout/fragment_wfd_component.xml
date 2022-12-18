@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.experience.wfd.WFDComponentFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="2dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/app_logo"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:layout_marginStart="10dp"
+                    android:textColor="#2196F3"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/tvWFD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colortext1"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/str_wfd_component"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_wfd_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colortext2"
+            android:justificationMode="inter_word"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintTop_toBottomOf="@id/tvWFD"/>
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_wfd_2"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv1"/>
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv1">
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_wfd_6"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+                android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_wfd_7"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_wfd_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colortext2"
+            android:justificationMode="inter_word"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintTop_toBottomOf="@id/ll1"/>
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_wfd_3"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv2"/>
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv3">
+
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_wfd_9"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/tv10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_wfd_10"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_wfd_11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colortext2"
+            android:justificationMode="inter_word"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintTop_toBottomOf="@id/ll2"/>
+
+        <ImageView
+            android:id="@+id/iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_wfd_4"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv3"/>
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7-rasm. Truba"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="8-rasm.  Voronka"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv5"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_wfd_5"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll3"/>
+
+        <LinearLayout
+            android:id="@+id/ll4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="9-rasm. Filtr"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10-rasm. Po‘kaklar"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="11-rasm. Indikator"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_wfd_12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colortext2"
+            android:justificationMode="inter_word"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintTop_toBottomOf="@id/ll4"/>
+
+        <ImageView
+            android:id="@+id/iv6"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/iv_wfd_6"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv4"/>
+
+        <LinearLayout
+            android:id="@+id/ll5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv6">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="12-rasm. Shlang "
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="13-rasm. Shlang uchun maxsus tiqin"
+                android:textColor="@color/colortext1"
+                android:textSize="16sp"
+            android:fontFamily="@font/inter_regular"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll5"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
