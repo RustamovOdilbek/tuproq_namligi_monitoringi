@@ -148,7 +148,7 @@
                                android:layout_width="match_parent"
                                android:layout_height="match_parent"
                                android:scaleType="centerCrop"
-                               android:src="@drawable/iv_cotton_iregation" />
+                               android:src="@drawable/iv_watering_recommendations" />
                        </com.google.android.material.card.MaterialCardView>
 
 
@@ -211,7 +211,7 @@
                                android:layout_width="match_parent"
                                android:layout_height="match_parent"
                                android:scaleType="centerCrop"
-                               android:src="@drawable/iv_watering_recommendations" />
+                               android:src="@drawable/iv_cotton_iregation" />
                        </com.google.android.material.card.MaterialCardView>
 
 

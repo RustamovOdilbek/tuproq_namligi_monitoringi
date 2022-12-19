@@ -87,7 +87,7 @@
             <ImageView
                 android:id="@+id/iv1"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
+                android:layout_height="220dp"
                 android:src="@drawable/iv_data_sbap_1"
                 android:layout_marginVertical="15dp"
                 app:layout_constraintStart_toStartOf="parent"

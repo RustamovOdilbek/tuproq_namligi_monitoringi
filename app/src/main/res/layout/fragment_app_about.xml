@@ -128,7 +128,7 @@
                         android:gravity="center"
                         android:textColor="#002856"
                         android:fontFamily="@font/inter_medium"
-                        android:text="O’zbekiston innovatsion rivojlanish vazirligi"
+                        android:text="O’zbekiston Respublikasi Innovatsion rivojlanish vazirligi"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -174,7 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="+9989 (97) 716 99 38"
+                android:text="+998 (97) 716 99 38"
                 android:textSize="14sp"
                 android:fontFamily="@font/inter_medium"
                 android:textColor="#002856"
@@ -187,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="+9989 (99) 765 89 02"
+                android:text="+998 (97) 765 89 02"
                 android:textSize="14sp"
                  android:fontFamily="@font/inter_medium"
                 android:textColor="#002856"
@@ -229,10 +229,88 @@
                 app:layout_constraintStart_toStartOf="@id/tvEmail1"
                 app:layout_constraintTop_toBottomOf="@id/tvEmail1"/>
 
+            <TextView
+                android:id="@+id/tvProect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loyiha mualliflari:"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textColor="#232B37"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail2"/>
+
+            <TextView
+                android:id="@+id/tvUser1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="M.A.Avliyakulov - Qishloq xo'jaligi fanlari doktori"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProect"/>
+
+            <TextView
+                android:id="@+id/tvUser2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="N.H.Durdiev - Qishloq xo'jaligi fanlari doktori"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUser1"/>
+
+            <TextView
+                android:id="@+id/tvUser3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="S.T.Boltaev - Texnika fanlari bo'yicha falsafa doktori"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUser2"/>
+
+            <TextView
+                android:id="@+id/tvUser4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="O.M.Rustamov - Android dasturchi"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUser3"/>
+
+            <TextView
+                android:id="@+id/tvUser5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="X.M.Ma'rufxonov - kichik ilmiy xodim"
+                android:textSize="14sp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="#002856"
+                android:layout_marginStart="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUser4"/>
+
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                app:layout_constraintTop_toBottomOf="@id/tvEmail2"/>
+                app:layout_constraintTop_toBottomOf="@id/tvUser5"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

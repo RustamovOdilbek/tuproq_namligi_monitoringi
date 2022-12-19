@@ -7,8 +7,6 @@ import com.smartirrigation.tuproq_namligi_monitoringg.R
 import com.smartirrigation.tuproq_namligi_monitoringg.databinding.FragmentExternalCharactersBinding
 import com.smartirrigation.tuproq_namligi_monitoringg.databinding.FragmentThermostatScalesBinding
 
-//Termostat tarozi
-
 class ThermostatScalesFragment : Fragment(R.layout.fragment_thermostat_scales) {
 
     private lateinit var binding: FragmentThermostatScalesBinding

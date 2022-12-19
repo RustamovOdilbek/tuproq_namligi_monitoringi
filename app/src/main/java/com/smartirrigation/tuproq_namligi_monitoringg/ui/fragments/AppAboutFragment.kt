@@ -24,13 +24,13 @@ class AppAboutFragment : Fragment(R.layout.fragment_app_about) {
 
         binding.tvPhone1.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:+9989977169938")
+            intent.data = Uri.parse("tel:+998977169938")
             startActivity(intent)
         }
 
         binding.tvPhone2.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:+9989997658902")
+            intent.data = Uri.parse("tel:+998977658902")
             startActivity(intent)
         }
 
