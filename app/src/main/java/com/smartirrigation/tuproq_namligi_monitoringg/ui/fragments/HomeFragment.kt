@@ -78,39 +78,4 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             startActivity(Intent.createChooser(pdfViewIntent, "Choos PDF viewer"))
         }
     }
-
-
-    private fun CopyAssets() {
-        val assetManager: AssetManager = requireActivity().getAssets()
-        var inputStream: InputStream? = null
-        var out: OutputStream? = null
-        val file: File = File(requireContext().getFilesDir(), "raw/malumot_cotton.pdf")
-        try {
-            inputStream = assetManager.open("raw/malumot_cotton.pdf")
-            out = requireActivity().openFileOutput(file.name, Context.MODE_WORLD_READABLE)
-            copyFile(inputStream, out)
-            inputStream.close()
-            inputStream = null
-            out!!.flush()
-            out.close()
-            out = null
-        } catch (e: java.lang.Exception) {
-            Log.e("tag", e.message!!)
-        }
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.setDataAndType(
-            Uri.parse("file:/" + requireActivity().getFilesDir().toString() + "/raw/malumot_cotton.pdf"),
-            "application/pdf"
-        )
-        startActivity(intent)
-    }
-
-    private fun copyFile(inputStream: InputStream, out: OutputStream?) {
-        val buffer = ByteArray(1024)
-        var read: Int
-        while (inputStream.read(buffer).also { read = it } != -1) {
-            out!!.write(buffer, 0, read)
-        }
-    }
-
 }
