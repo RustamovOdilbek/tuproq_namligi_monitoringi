@@ -8,8 +8,10 @@ import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
+import androidx.core.app.ActivityCompat
 import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothDeviceFounderReceiver
 import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothHelperConstant
 import com.smartirrigation.tuproq_namligi_monitoringg.library.BluetoothHelperListener
@@ -98,7 +100,6 @@ class BluetoothHelper(private val context: Context, private val listener: Blueto
     }
 
     fun startDiscovery() {
-        Log.d("TAG", "startDiscovery: 1 ${isDiscovering} ${isEnabled}")
 
         if (isEnabled && !isDiscovering) {
             mBluetoothAdapter.startDiscovery()
@@ -112,7 +113,6 @@ class BluetoothHelper(private val context: Context, private val listener: Blueto
     }
 
     fun stopDiscovery() {
-        Log.d("TAG", "startDiscovery: 2${isDiscovering} ${isEnabled}")
         if (isEnabled && isDiscovering) {
             mBluetoothAdapter.cancelDiscovery()
         }

@@ -147,8 +147,7 @@
                            <ImageView
                                android:layout_width="match_parent"
                                android:layout_height="match_parent"
-                               android:scaleType="centerCrop"
-                               android:src="@drawable/iv_watering_recommendations" />
+                               android:src="@drawable/home_2" />
                        </com.google.android.material.card.MaterialCardView>
 
 
@@ -156,7 +155,7 @@
                        <TextView
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           android:text="G'o'zaning sugorish muddatlarini aniqlash usullari"
+                           android:text="G'o'zaning sug'orish muddatlarini aniqlash usullari"
                            android:layout_marginTop="15dp"
                            android:gravity="center"
                            android:textSize="16sp"

@@ -2,12 +2,10 @@ package com.smartirrigation.tuproq_namligi_monitoringg.ui.fragments
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -79,7 +77,6 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
         binding.startStop.setOnClickListener {
             if (bluetoothHelper.isBluetoothScanning()) {
                 bluetoothHelper.stopDiscovery()
-
             } else {
                 bluetoothHelper.startDiscovery()
                 showProgress()
@@ -114,6 +111,7 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
     }
 
     override fun onStartDiscovery() {
+        Log.d(TAG, "onStartDiscovery: 1")
         binding.startStop.text = "Stop discovery"
         itemList.clear()
         viewAdapter.submitList(itemList)
@@ -121,15 +119,18 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
     }
 
     override fun onFinishDiscovery() {
+        Log.d(TAG, "onFinishDiscovery: 2")
         binding.startStop.text = "Start discovery"
         hideProgress()
     }
 
     override fun onEnabledBluetooth() {
+        Log.d(TAG, "onEnabledBluetooth: 3")
         binding.enableDisable.text = "Bluetooth State Off"
     }
 
     override fun onDisabledBluetooh() {
+        Log.d(TAG, "onDisabledBluetooh: 4")
         binding.enableDisable.text = "Bluetooth State On"
 
     }
@@ -140,6 +141,8 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
 //        if (sensorMac.contains(device!!.address) && !macAddress.contains(device?.address)){
 //
 //        }
+
+        Log.d(TAG, "getBluetoothDeviceList: 5")
 
         hideProgress()
 
