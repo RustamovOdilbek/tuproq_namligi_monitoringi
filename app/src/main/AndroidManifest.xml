@@ -4,15 +4,18 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- Needed only if your app looks for Bluetooth devices. -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- <= 30 + Xiaomi/MIUI -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
 
     <application
         android:allowBackup="true"
@@ -33,6 +36,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".helper.bluetooth.SerialService" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

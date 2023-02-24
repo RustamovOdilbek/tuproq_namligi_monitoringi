@@ -1,37 +1,31 @@
 package com.smartirrigation.tuproq_namligi_monitoringg.ui.activity
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.smartirrigation.tuproq_namligi_monitoringg.R
 import com.smartirrigation.tuproq_namligi_monitoringg.databinding.ActivityMainBinding
-
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    val requestCode = 1001
-    private var isScanActive = false
-
-    @RequiresApi(Build.VERSION_CODES.S)
-    private val PERMISSIONS_BLUETOOTH = arrayOf(
-        Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.ACCESS_COARSE_LOCATION,
-        Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS,
-        Manifest.permission.BLUETOOTH_SCAN,
-        Manifest.permission.BLUETOOTH_CONNECT,
-        Manifest.permission.BLUETOOTH_ADVERTISE,
-        Manifest.permission.BLUETOOTH,
-        Manifest.permission.BLUETOOTH_PRIVILEGED
-    )
 
     private val BLE_PERMISSIONS = arrayOf(
         Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -51,20 +45,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED
-//            && ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED
-//            && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-//            && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
-//            && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED)
-//        {
-//
-//        }else{
-//            requestSContactPermissiopn()
-//        }
-
-       // initViews()
 
         requestBlePermissions(this, 1001)
+
+        grantUriPermission()
+        checkLocationIsEnabledOrNot()
     }
 
     fun requestBlePermissions(activity: Activity?, requestCode: Int) {
@@ -77,60 +62,39 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun initViews() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            requestMultiplePermissions.launch(
-                arrayOf(
-                    Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT
-                )
-            )
+
+    private fun checkLocationIsEnabledOrNot() {
+        val lm = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        var gpsEnabled = false
+        var networkEnabled = false
+
+        try {
+            gpsEnabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+        }catch (e: Exception){
+            e.printStackTrace()
         }
 
-    }
-
-    private val requestMultiplePermissions =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
-            permissions.entries.forEach { _ ->
-                if (isScanActive) setUpBluetooth()
-                isScanActive = !isScanActive
-            }
+        try {
+            networkEnabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+        }catch (e: Exception){
+            e.printStackTrace()
         }
 
-    private fun setUpDiscovery() {
-        if (ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.BLUETOOTH_SCAN
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
-
-        }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.S)
-    private fun setUpBluetooth() {
-        val permission1 = ActivityCompat.checkSelfPermission(
-            this, Manifest.permission.BLUETOOTH
-        )
-
-        if (permission1 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, PERMISSIONS_BLUETOOTH, 1)
-        } else {
-            setUpDiscovery()
+        if (!gpsEnabled && !networkEnabled){
+            AlertDialog.Builder(this)
+                .setMessage("Enable gpd Servise")
+                .setCancelable(false)
+                .setPositiveButton("Enable", DialogInterface.OnClickListener { dialogInterface, i ->
+                    startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+                }).setPositiveButton("Cancel", null)
+                .show()
         }
     }
 
-    private fun requestSContactPermissiopn() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.BLUETOOTH_CONNECT)){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.BLUETOOTH_SCAN,
-                    Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION,  Manifest.permission.ACCESS_BACKGROUND_LOCATION), requestCode)
-            }
-        }else{
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.BLUETOOTH_SCAN,
-                    Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_BACKGROUND_LOCATION), requestCode)
-            }
+    private fun grantUriPermission(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            ActivityCompat.checkSelfPermission(applicationContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,  arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,  Manifest.permission.ACCESS_FINE_LOCATION), 100)
         }
     }
 

@@ -85,8 +85,8 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
 
         viewAdapter = BluetoothListAdapter(object : OnClickEvent{
             override fun setOnClickListener(bluetoothDeviceModel: BluetoothDeviceModel) {
-               findNavController().navigate(R.id.action_moistureMonitoringFragment_to_controlFragment,
-                   bundleOf(NAME to bluetoothDeviceModel.name, MAC_NUMBER to bluetoothDeviceModel.macNumber))
+                findNavController().navigate(R.id.action_moistureMonitoringFragment_to_controlFragment,
+                    bundleOf(NAME to bluetoothDeviceModel.name, MAC_NUMBER to bluetoothDeviceModel.macNumber))
             }
 
         })
@@ -135,7 +135,7 @@ class MoistureMonitoringFragment : BaseFragment(R.layout.fragment_moisture_monit
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "MissingPermission")
     override fun getBluetoothDeviceList(device: BluetoothDevice?) {
 
 //        if (sensorMac.contains(device!!.address) && !macAddress.contains(device?.address)){

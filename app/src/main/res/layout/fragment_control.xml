@@ -24,6 +24,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/image"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/app_logo"/>
@@ -33,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:layout_marginStart="10dp"
-                    android:fontFamily="@font/inter_medium"
+                    android:fontFamily="@font/intermedium"
                     android:textColor="#2196F3"
                     android:textSize="20sp"/>
             </LinearLayout>
@@ -46,6 +47,160 @@
         android:layout_height="match_parent"
         android:background="@color/white"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <LinearLayout
+            android:id="@+id/llCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/llState">
+            <TextView
+                android:id="@+id/tvCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mamlakat: "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/colortext1"
+                android:fontFamily="@font/intermedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvCountryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="O'zbekiton"
+                android:textSize="20sp"
+                android:fontFamily="@font/interregular"
+                android:textColor="#002856"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view">
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vilovay: "
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colortext1"
+                android:fontFamily="@font/intermedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvStateName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toshkent"
+                android:fontFamily="@font/interregular"
+                android:textColor="#002856"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/llAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view">
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:textColor="@color/colortext1"
+                android:fontFamily="@font/intermedium"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvAddressName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beruniy shoh ko'cha"
+                android:textSize="20sp"
+                android:fontFamily="@font/interregular"
+                android:textColor="#002856"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llAddress">
+            <TextView
+                android:id="@+id/tvHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Namlik miqdori: "
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colortext1"
+                android:fontFamily="@font/intermedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvHumidityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 %"
+                android:fontFamily="@font/interregular"
+                android:textColor="#002856"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
