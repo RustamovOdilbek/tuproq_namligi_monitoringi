@@ -25,7 +25,6 @@ import java.util.*
 
 class ControlFragment : BaseFragment(R.layout.fragment_control), ServiceConnection, SerialListener,
     LocationListener {
-    private val TAG = "ControlFragment"
     private lateinit var binding: FragmentControlBinding
     lateinit var locationManager: LocationManager
 
@@ -167,8 +166,6 @@ class ControlFragment : BaseFragment(R.layout.fragment_control), ServiceConnecti
                 spn.append(TextUtil.toCaretString(msg, newline.length != 0))
             }
         }
-
-        Log.d(TAG, "receive: ${spn.toString()}")
         binding.tvHumidityName.text = spn.toString()
     }
 
@@ -212,7 +209,6 @@ class ControlFragment : BaseFragment(R.layout.fragment_control), ServiceConnecti
         }
     }
     override fun onLocationChanged(location: Location) {
-        Log.d("2222", "123333333654789")
         try {
             val geocoder = Geocoder(requireContext().applicationContext, Locale.ENGLISH)
             val address = geocoder.getFromLocation(location.latitude, location.longitude, 1) as List<Address>

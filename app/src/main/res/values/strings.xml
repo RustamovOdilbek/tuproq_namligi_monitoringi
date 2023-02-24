@@ -164,4 +164,7 @@
        \u0020  Foydalanish: TDR310S namlik sensorlaridan g‘o‘zaning sug‘orish muddatlarini aniqlash uchun foydalanishda dalaga chigit ekilgandan keyin g‘o‘za qatoridan tomchilatib sug‘oriladigan maydonlarda 0-50 sm chuqurlikda, egatlab sug‘oriladigan maydonlarda 0-100 sm chuqurlikda, kengligi 50 sm bo‘lgan chuqur (o‘ra) qoziladi va unga TDR310S uskunasining 3 ta namlik sensori o‘rnatiladi. Bunda tomchilatib sug‘oriladigan maydonlarda tuproqning 0-10 sm qatlamiga 1 chi sensor, 0-30 sm qatlamga 2 chi sensor, 0-45 sm qatlamga esa 3 chi sensor (egatlab sug‘oriladigan maydonlarda tuproqning 0-50 sm qatlamiga 1 chi sensor, 0-70 sm qatlamga 2 chi sensor, 0-100 sm qatlamga esa 3 chi sensor) o‘rnatiladi va sensorlar ehtiyotkorlik bilan ko‘milib, TDR310S shtekrlari tuproq yuzidan 40-50 sm balandlikda traktor mexanizmlariga xalaqit qilmaydigan qilib tayoq yog‘ochga bog‘lab qo‘yiladi.</string>
     <string name="str_tdr_4">TDR310S namlik sensorlarini dalaga o‘rnatish ketma ketligi</string>
     <string name="str_tdr_5"> \u0020 Tegishli sim karta o‘rnatilgandan keyin maʼlumotlarni internet orqali olish imkoniyati yaratiladi. Shuningdek kichik xotira qurilmasi ham o‘rnatilib, maʼlumotlarni jamlab borish imkoni mavjud. Shuningdek maʼlumotlarni HTTP orqali ThingSpeakTM veb saytidan yuklab olish yoki Hologram dasturi orqali maʼlumotlarni olish imkoni mavjud.</string>
+    <string name="str_address">Address:</string>
+    <string name="str_state">Vilovay:</string>
+    <string name="str_country">Mamlakat:</string>
 </resources>

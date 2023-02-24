@@ -229,6 +229,29 @@
                 app:layout_constraintStart_toStartOf="@id/tvEmail1"
                 app:layout_constraintTop_toBottomOf="@id/tvEmail1"/>
 
+            <ImageView
+                android:id="@+id/ivDeveloper"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_connection_internet"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail2"/>
+
+            <TextView
+                android:id="@+id/tvDeveloper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="+998 (91) 775 17 79"
+                android:textSize="14sp"
+                android:fontFamily="@font/intermedium"
+                android:textColor="#002856"
+                app:layout_constraintBottom_toBottomOf="@id/ivDeveloper"
+                app:layout_constraintStart_toEndOf="@id/ivDeveloper"
+                app:layout_constraintTop_toTopOf="@id/ivDeveloper" />
+
+
             <TextView
                 android:id="@+id/tvProect"
                 android:layout_width="wrap_content"
@@ -239,7 +262,7 @@
                 android:textColor="#232B37"
                 android:fontFamily="@font/intermedium"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvEmail2"/>
+                app:layout_constraintTop_toBottomOf="@id/ivDeveloper"/>
 
             <TextView
                 android:id="@+id/tvUser1"
@@ -282,18 +305,34 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvUser2"/>
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/tvUser4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="O.M.Rustamov - Android dasturchi"
-                android:textSize="14sp"
-                android:fontFamily="@font/intermedium"
-                android:textColor="#002856"
+                android:layout_height="40dp"
                 android:layout_marginStart="28dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvUser3"/>
+                app:layout_constraintTop_toBottomOf="@id/tvUser3"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="O.M.Rustamov - Mobile developer"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/intermedium"
+                    android:textColor="#002856"
+                   />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_connection"/>
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/tvUser5"

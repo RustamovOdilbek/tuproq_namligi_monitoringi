@@ -45,6 +45,18 @@ class AppAboutFragment : Fragment(R.layout.fragment_app_about) {
             emailIntent.data = Uri.parse("mailto:normat8689@gmail.com")
             startActivity(Intent.createChooser(emailIntent, "Send feedback"))
         }
+
+        binding.tvUser4.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:+998917751779")
+            startActivity(intent)
+        }
+
+        binding.tvDeveloper.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:+998917751779")
+            startActivity(intent)
+        }
     }
 
 }
